@@ -14,19 +14,23 @@
 <meta name="author" content="FyfBlog" />
 
 
-    
-    
 
+<meta name="description" content="#Viewpager无限循环(首页与尾页平滑过渡)##double kill在网上找了不少的viewpager无限轮播的例子，大部分都是Interger.MAX_VALUES。滑到最后一页的时候setCurrentItem(0),这样虽然实现了无限轮播，但是当从最后一页跳转到第一页的时候不够优雅。。通过google终于找到了答案:
 
-<meta name="description" content="有志者，事竟成！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="付易帆的个人博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+将你的图片的list的前后各增加一张图片,并将最后一张图片放至图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Viewpager无限循环(首页与尾页平滑过渡)">
+<meta property="og:url" content="http://yoursite.com/2016/10/13/Viewpager无限循环-首页与尾页平滑过渡/index.html">
 <meta property="og:site_name" content="付易帆的个人博客">
-<meta property="og:description" content="有志者，事竟成！">
+<meta property="og:description" content="#Viewpager无限循环(首页与尾页平滑过渡)##double kill在网上找了不少的viewpager无限轮播的例子，大部分都是Interger.MAX_VALUES。滑到最后一页的时候setCurrentItem(0),这样虽然实现了无限轮播，但是当从最后一页跳转到第一页的时候不够优雅。。通过google终于找到了答案:
+
+将你的图片的list的前后各增加一张图片,并将最后一张图片放至图">
+<meta property="og:updated_time" content="2016-10-13T13:22:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="付易帆的个人博客">
-<meta name="twitter:description" content="有志者，事竟成！">
+<meta name="twitter:title" content="Viewpager无限循环(首页与尾页平滑过渡)">
+<meta name="twitter:description" content="#Viewpager无限循环(首页与尾页平滑过渡)##double kill在网上找了不少的viewpager无限轮播的例子，大部分都是Interger.MAX_VALUES。滑到最后一页的时候setCurrentItem(0),这样虽然实现了无限轮播，但是当从最后一页跳转到第一页的时候不够优雅。。通过google终于找到了答案:
+
+将你的图片的list的前后各增加一张图片,并将最后一张图片放至图">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -54,13 +58,11 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>付易帆的个人博客</title>
+<title>Viewpager无限循环(首页与尾页平滑过渡) | 付易帆的个人博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -69,8 +71,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -264,9 +266,7 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-Viewpager无限循环-首页与尾页平滑过渡" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Viewpager无限循环-首页与尾页平滑过渡" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/10/13/Viewpager无限循环-首页与尾页平滑过渡/" class="article-date">
@@ -284,12 +284,19 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/13/Viewpager无限循环-首页与尾页平滑过渡/">Viewpager无限循环(首页与尾页平滑过渡)</a>
+    <h1 class="article-title" itemprop="name">
+      Viewpager无限循环(首页与尾页平滑过渡)
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -305,189 +312,85 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Android静默安装" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/09/29/Android静默安装/" class="article-date">
-      <time datetime="2016-09-29T15:41:27.000Z" itemprop="datePublished">2016-09-29</time>
-</a>
-
-
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2016/10/13/Viewpager无限循环-首页与尾页平滑过渡/">Viewpager无限循环(首页与尾页平滑过渡)</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">FyfBlog</a></p>
+        <p><span>Created:</span>2016-10-13, 21:22:21</p>
+        <p><span>Updated:</span>2016-10-13, 21:22:50</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2016/10/13/Viewpager无限循环-首页与尾页平滑过渡/" title="Viewpager无限循环(首页与尾页平滑过渡)">http://yoursite.com/2016/10/13/Viewpager无限循环-首页与尾页平滑过渡/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2016/10/13/Viewpager无限循环-首页与尾页平滑过渡/　　By FyfBlog" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+
+
+    <nav id="article-nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/29/Android静默安装/">Android静默安装</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="静默安装"><a href="#静默安装" class="headerlink" title="静默安装"></a>静默安装</h1><p><strong><em>First blood </em></strong><br>今天公司有个静默安装的需求，由于是自己的系统，所以操作起来比较容易，无需kengdie的root权限，在网上找了下资料，记录如下：</p>
-<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span>  DataOutputStream dataOutputStream = <span class="keyword">null</span>; </div><div class="line"><span class="keyword">static</span> BufferedReader errorStream = <span class="keyword">null</span>; </div><div class="line"><span class="keyword">static</span> Process process;</div><div class="line"><span class="keyword">static</span> <span class="keyword">boolean</span> result = <span class="keyword">false</span>;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  <span class="keyword">boolean</span> <span class="title">slientInstall</span><span class="params">(String apkPath)</span></span></div><div class="line">&#123;  </div><div class="line">  <span class="keyword">try</span> &#123;        </div><div class="line">process = Runtime.getRuntime().exec(<span class="string">"su"</span>); <span class="comment">//获取su权限</span></div><div class="line"> dataOutputStream = <span class="keyword">new</span> DataOutputStream(process.getOutputStream());<span class="comment">//获取</span></div><div class="line">      String command = <span class="string">"pm install -r "</span>+apkPath+<span class="string">"\n"</span>; <span class="comment">//安装命令</span></div><div class="line"> String path = apkPath;       </div><div class="line"> Log.e(<span class="string">"Tag"</span>,command);       </div><div class="line"> Log.e(<span class="string">"Tag"</span>,path+<span class="string">"+++&gt;path"</span>);       </div><div class="line">     dataOutputStream.write(command.getBytes(Charset.forName(<span class="string">"utf-8"</span>)));        </div><div class="line">     dataOutputStream.flush();     </div><div class="line">     dataOutputStream.writeBytes(<span class="string">"exit\n"</span>);       </div><div class="line">     dataOutputStream.flush();       </div><div class="line">   <span class="keyword">try</span> &#123;            </div><div class="line">  process.waitFor();           </div><div class="line">   errorStream = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(process.getErrorStream())); <span class="comment">//记录安装的信息      </span></div><div class="line"> String msg = <span class="string">""</span>;</div><div class="line">  String line;           </div><div class="line"> <span class="keyword">while</span> ((line = errorStream.readLine())!= <span class="keyword">null</span>)</div><div class="line">&#123;               </div><div class="line"> msg+=line;          </div><div class="line">  &#125;          </div><div class="line">  Log.e(<span class="string">"Tag"</span>,<span class="string">"安装的信息是"</span>+msg);   </div><div class="line">         <span class="keyword">if</span> (!msg.contains(<span class="string">"Failure"</span>))</div><div class="line">                    &#123;</div><div class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;           </div><div class="line">                     &#125;       </div><div class="line">                                              &#125; </div><div class="line"><span class="keyword">catch</span> (InterruptedException e)</div><div class="line"> &#123;           </div><div class="line"> e.printStackTrace();       </div><div class="line"> &#125;   </div><div class="line"> &#125;</div><div class="line"> <span class="keyword">catch</span> (IOException e) </div><div class="line">&#123;        </div><div class="line">e.printStackTrace(); </div><div class="line">   &#125;<span class="keyword">finally</span> &#123;  </div><div class="line">          <span class="keyword">try</span> &#123;             </div><div class="line">   <span class="keyword">if</span> (dataOutputStream!=<span class="keyword">null</span>)&#123;    </div><div class="line">            dataOutputStream.close();   </div><div class="line">             &#125;             </div><div class="line">   <span class="keyword">if</span> (errorStream!= <span class="keyword">null</span>)&#123;      </div><div class="line">              errorStream.close();      </div><div class="line">          &#125;        </div><div class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;  </div><div class="line">              e.printStackTrace();  </div><div class="line">          &#125;   </div><div class="line"> &#125;    </div><div class="line"><span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面就实现了静默安装的功能，需要应用有root 权限才行,第一次写博客代码有点乱,,zzzzz<br>待续。。</p>
-<p>###作者<br><a href="fuyifang.github.io">fuyifang</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-不能用中文？？？" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/09/24/不能用中文？？？/" class="article-date">
-      <time datetime="2016-09-24T13:55:43.000Z" itemprop="datePublished">2016-09-24</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/24/不能用中文？？？/">不能用中文？？？</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>有点傻逼吧</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-postName" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/09/24/postName/" class="article-date">
-      <time datetime="2016-09-24T11:14:25.000Z" itemprop="datePublished">2016-09-24</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/09/29/Android静默安装/">
+                    Android静默安装
+                </a>
+            </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/24/postName/">第一篇博客</a>
-    </h1>
-  
+    </nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="博客启程"><a href="#博客启程" class="headerlink" title="博客启程"></a>博客启程</h2>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Viewpager无限循环-首页与尾页平滑过渡"><span class="toc-number">1.</span> <span class="toc-text">#Viewpager无限循环(首页与尾页平滑过渡)</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Viewpager无限循环(首页与尾页平滑过渡)　| 付易帆的个人博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
 
 
 
@@ -495,9 +398,33 @@
 
 
 
+    
 
-  
-  
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/09/29/Android静默安装/" title="Next: Android静默安装">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/Viewpager无限循环-首页与尾页平滑过渡/">Viewpager无限循环(首页与尾页平滑过渡)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/29/Android静默安装/">Android静默安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/24/不能用中文？？？/">不能用中文？？？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/24/postName/">第一篇博客</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
