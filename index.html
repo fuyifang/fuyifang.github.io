@@ -266,6 +266,71 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-使用mvp-rxjava-retrofit加载数据" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/08/使用mvp-rxjava-retrofit加载数据/" class="article-date">
+      <time datetime="2017-01-08T03:22:30.000Z" itemprop="datePublished">2017-01-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/08/使用mvp-rxjava-retrofit加载数据/">使用mvp+rxjava+retrofit加载数据</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><em>将mvp和rxjava和retrofit简单整合的列子,让activity的代码不再那么臃肿,只负责显示数据.</em></p>
+<hr>
+<p>关于mvp的介绍可以看<a href="https://github.com/googlesamples/android-architecture" target="_blank" rel="external">这里</a>，<br>关于Rxjava的介绍可以看<a href="http://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="external">这里</a>;<br>关于retrofit的介绍可以看<a href="http://square.github.io/retrofit/" target="_blank" rel="external">这里</a>(看官方文档应该是最有效率的2333…);<br>首先看一下获取数据的接口链接:<br><a href="http://apicloud.mob.com/v1/weather/query?province=%E6%B9%96%E5%8D%97&amp;key=520520test&amp;city=%E9%95%BF%E6%B2%99" target="_blank" rel="external">http://apicloud.mob.com/v1/weather/query?province=%E6%B9%96%E5%8D%97&amp;key=520520test&amp;city=%E9%95%BF%E6%B2%99</a>;<br>普通的请求方式是这样的:<br>定义一个接口:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ApiStores</span> </span>&#123;    </div><div class="line">String API_SERVER_URL = <span class="string">"http://apicloud.mob.com/v1/weather/"</span>;    </div><div class="line">String KEY = <span class="string">"...."</span>; </div><div class="line">   <span class="meta">@GET</span>(<span class="string">"query"</span>)   </div><div class="line"> <span class="function">Call&lt;WeatherModel&gt; <span class="title">getWeatherByAddress</span><span class="params">(@Query(<span class="string">"key"</span>)</span> String key,@<span class="title">Query</span><span class="params">(<span class="string">"province"</span>)</span> String province, @<span class="title">Query</span><span class="params">(<span class="string">"city"</span>)</span> String city)</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>创建一个Retrofit对象:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Retrofit retrofit = <span class="keyword">new</span> Retrofit.Builder()</div><div class="line">.baseUrl(ApiStores.API_SERVER_URL) </div><div class="line"><span class="comment">//增加返回值为Gson的支持(以实体类返回) </span></div><div class="line">.addConverterFactory(GsonConverterFactory.create()) </div><div class="line"> .build();</div><div class="line">ApiStores service = retrofit.create(ApiStores.class);</div><div class="line">Call&lt;WeatherModel&gt; repos=service.getWeatherByAddress(<span class="string">"湖南"</span>,<span class="string">"长沙"</span>);</div></pre></td></tr></table></figure></p>
+<p>然后通过返回的call 来发出网络请求:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">call.enqueue(<span class="keyword">new</span> Callback&lt;String&gt;() &#123; </div><div class="line"><span class="meta">@Override</span> </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResponse</span><span class="params">(Call&lt;String&gt; call, Response&lt;WeatherModel&gt; response)</span> </span></div><div class="line">&#123;</div><div class="line"> Log.e(<span class="string">"==="</span>,<span class="string">"return:"</span>WeatherModel.getname);<span class="comment">//返回值直接就是对象,简直不要太爽...</span></div><div class="line">&#125; </div><div class="line"><span class="meta">@Override</span> </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(Call&lt;String&gt; call, Throwable t)</span> </span>&#123;</div><div class="line"> Log.e(<span class="string">"==="</span>,<span class="string">"失败"</span>);</div><div class="line"> &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>这样已经可以完成数据的请求了,但是这样代码都在activity里,如果代码变多activity会变得臃肿起来,不够优雅…╮(╯_╰)╭</p>
+<hr>
+<p>使用mvp+rxjava+retrofit:<br>retrofit对Rxjava的支持是非常好的，可以直接返回可观察者,像这样:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@GET</span>(<span class="string">"query"</span>)</div><div class="line"><span class="function">Observable&lt;WeatherModel&gt; <span class="title">getWeatherByAddress</span><span class="params">(@Query(<span class="string">"key"</span>)</span> String key,@<span class="title">Query</span><span class="params">(<span class="string">"province"</span>)</span> String province, @<span class="title">Query</span><span class="params">(<span class="string">"city"</span>)</span> String city)</span>;</div></pre></td></tr></table></figure></p>
+<p>我们拿到可观察者后,就可以订阅事件了:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mCompositeSubscription.add(observable.subscribeOn(Schedulers.io())    </div><div class="line">.observeOn(AndroidSchedulers.mainThread())      </div><div class="line">  .subscribe(subscriber));</div></pre></td></tr></table></figure></p>
+<p>rxjava最nb的地方就是它可以很方便的切换线程不需要使用各种runOnUiThread<br>完整代码可以看<a href="https://github.com/fuyifang/RxWeather" target="_blank" rel="external">这个</a>;</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-安卓全局的复制粘贴-Clipboard" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

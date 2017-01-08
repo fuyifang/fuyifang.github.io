@@ -15,22 +15,22 @@
 
 
 
-<meta name="description" content="#安卓全局ClipboardClipboard官方文档在此(需要科学上网…)Clioboard 的官方解释是这样的:
+<meta name="description" content="将mvp和rxjava和retrofit简单整合的列子,让activity的代码不再那么臃肿,只负责显示数据.
 
-Android provides a powerful clipboard-based framework for copying and pasting. It supports both simple and complex data types, including tex">
+关于mvp的介绍可以看这里，关于Rxjava的介绍可以看这里;关于retrofit的介绍可以看这里(看官方文档应该是最有效率的2333…);首先看一下获取数据的接口链接:http://apicloud.mob.com/v1/weather/query?province=%E6%B9%9">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安卓全局的复制粘贴--Clipboard">
-<meta property="og:url" content="http://yoursite.com/2017/01/08/安卓全局的复制粘贴-Clipboard/index.html">
+<meta property="og:title" content="使用mvp+rxjava+retrofit加载数据">
+<meta property="og:url" content="http://yoursite.com/2017/01/08/使用mvp-rxjava-retrofit加载数据/index.html">
 <meta property="og:site_name" content="付易帆的个人博客">
-<meta property="og:description" content="#安卓全局ClipboardClipboard官方文档在此(需要科学上网…)Clioboard 的官方解释是这样的:
+<meta property="og:description" content="将mvp和rxjava和retrofit简单整合的列子,让activity的代码不再那么臃肿,只负责显示数据.
 
-Android provides a powerful clipboard-based framework for copying and pasting. It supports both simple and complex data types, including tex">
-<meta property="og:updated_time" content="2017-01-08T03:17:44.000Z">
+关于mvp的介绍可以看这里，关于Rxjava的介绍可以看这里;关于retrofit的介绍可以看这里(看官方文档应该是最有效率的2333…);首先看一下获取数据的接口链接:http://apicloud.mob.com/v1/weather/query?province=%E6%B9%9">
+<meta property="og:updated_time" content="2017-01-08T03:23:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安卓全局的复制粘贴--Clipboard">
-<meta name="twitter:description" content="#安卓全局ClipboardClipboard官方文档在此(需要科学上网…)Clioboard 的官方解释是这样的:
+<meta name="twitter:title" content="使用mvp+rxjava+retrofit加载数据">
+<meta name="twitter:description" content="将mvp和rxjava和retrofit简单整合的列子,让activity的代码不再那么臃肿,只负责显示数据.
 
-Android provides a powerful clipboard-based framework for copying and pasting. It supports both simple and complex data types, including tex">
+关于mvp的介绍可以看这里，关于Rxjava的介绍可以看这里;关于retrofit的介绍可以看这里(看官方文档应该是最有效率的2333…);首先看一下获取数据的接口链接:http://apicloud.mob.com/v1/weather/query?province=%E6%B9%9">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -62,7 +62,7 @@ Android provides a powerful clipboard-based framework for copying and pasting. I
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>安卓全局的复制粘贴--Clipboard | 付易帆的个人博客</title>
+<title>使用mvp+rxjava+retrofit加载数据 | 付易帆的个人博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -266,11 +266,11 @@ Android provides a powerful clipboard-based framework for copying and pasting. I
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-安卓全局的复制粘贴-Clipboard" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-使用mvp-rxjava-retrofit加载数据" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/01/08/安卓全局的复制粘贴-Clipboard/" class="article-date">
-      <time datetime="2017-01-08T03:16:45.000Z" itemprop="datePublished">2017-01-08</time>
+      <a href="/2017/01/08/使用mvp-rxjava-retrofit加载数据/" class="article-date">
+      <time datetime="2017-01-08T03:22:30.000Z" itemprop="datePublished">2017-01-08</time>
 </a>
 
 
@@ -285,7 +285,7 @@ Android provides a powerful clipboard-based framework for copying and pasting. I
         
   
     <h1 class="article-title" itemprop="name">
-      安卓全局的复制粘贴--Clipboard
+      使用mvp+rxjava+retrofit加载数据
     </h1>
   
 
@@ -302,20 +302,16 @@ Android provides a powerful clipboard-based framework for copying and pasting. I
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="安卓全局Clipboard"><a href="#安卓全局Clipboard" class="headerlink" title="#安卓全局Clipboard"></a>#安卓全局Clipboard</h2><p>Clipboard官方文档<a href="https://developer.android.com/guide/topics/text/copy-paste.html" target="_blank" rel="external">在此</a>(需要科学上网…)<br>Clioboard 的官方解释是这样的:</p>
+        <p><em>将mvp和rxjava和retrofit简单整合的列子,让activity的代码不再那么臃肿,只负责显示数据.</em></p>
 <hr>
-<p><em>Android provides a powerful clipboard-based framework for copying and pasting. It supports both simple and complex data types, including text strings, complex data structures, text and binary stream data, and even application assets</em></p>
+<p>关于mvp的介绍可以看<a href="https://github.com/googlesamples/android-architecture" target="_blank" rel="external">这里</a>，<br>关于Rxjava的介绍可以看<a href="http://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="external">这里</a>;<br>关于retrofit的介绍可以看<a href="http://square.github.io/retrofit/" target="_blank" rel="external">这里</a>(看官方文档应该是最有效率的2333…);<br>首先看一下获取数据的接口链接:<br><a href="http://apicloud.mob.com/v1/weather/query?province=%E6%B9%96%E5%8D%97&amp;key=520520test&amp;city=%E9%95%BF%E6%B2%99" target="_blank" rel="external">http://apicloud.mob.com/v1/weather/query?province=%E6%B9%96%E5%8D%97&amp;key=520520test&amp;city=%E9%95%BF%E6%B2%99</a>;<br>普通的请求方式是这样的:<br>定义一个接口:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ApiStores</span> </span>&#123;    </div><div class="line">String API_SERVER_URL = <span class="string">"http://apicloud.mob.com/v1/weather/"</span>;    </div><div class="line">String KEY = <span class="string">"...."</span>; </div><div class="line">   <span class="meta">@GET</span>(<span class="string">"query"</span>)   </div><div class="line"> <span class="function">Call&lt;WeatherModel&gt; <span class="title">getWeatherByAddress</span><span class="params">(@Query(<span class="string">"key"</span>)</span> String key,@<span class="title">Query</span><span class="params">(<span class="string">"province"</span>)</span> String province, @<span class="title">Query</span><span class="params">(<span class="string">"city"</span>)</span> String city)</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>创建一个Retrofit对象:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Retrofit retrofit = <span class="keyword">new</span> Retrofit.Builder()</div><div class="line">.baseUrl(ApiStores.API_SERVER_URL) </div><div class="line"><span class="comment">//增加返回值为Gson的支持(以实体类返回) </span></div><div class="line">.addConverterFactory(GsonConverterFactory.create()) </div><div class="line"> .build();</div><div class="line">ApiStores service = retrofit.create(ApiStores.class);</div><div class="line">Call&lt;WeatherModel&gt; repos=service.getWeatherByAddress(<span class="string">"湖南"</span>,<span class="string">"长沙"</span>);</div></pre></td></tr></table></figure></p>
+<p>然后通过返回的call 来发出网络请求:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">call.enqueue(<span class="keyword">new</span> Callback&lt;String&gt;() &#123; </div><div class="line"><span class="meta">@Override</span> </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResponse</span><span class="params">(Call&lt;String&gt; call, Response&lt;WeatherModel&gt; response)</span> </span></div><div class="line">&#123;</div><div class="line"> Log.e(<span class="string">"==="</span>,<span class="string">"return:"</span>WeatherModel.getname);<span class="comment">//返回值直接就是对象,简直不要太爽...</span></div><div class="line">&#125; </div><div class="line"><span class="meta">@Override</span> </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(Call&lt;String&gt; call, Throwable t)</span> </span>&#123;</div><div class="line"> Log.e(<span class="string">"==="</span>,<span class="string">"失败"</span>);</div><div class="line"> &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>这样已经可以完成数据的请求了,但是这样代码都在activity里,如果代码变多activity会变得臃肿起来,不够优雅…╮(╯_╰)╭</p>
 <hr>
-<p>大概意思就是:<br>Android提供了一个强大的复制和粘贴clipboard-based框架。它同时支持的简单和复杂数据类型,包括文本字符串,复杂的数据结构,文本和二进制数据流,甚至应用程序资源.<br>Clipboard支持三种形式的数据传递:<strong>text</strong>,<strong>URL</strong>,<strong>Intent</strong>.</p>
-<p>某宝的口令应该就是之类的方式来实现的。</p>
-<h2 id="HOW-TO-USE"><a href="#HOW-TO-USE" class="headerlink" title="##HOW TO USE:"></a>##HOW TO USE:</h2><p>直接上官方的示例代码</p>
-<p>###获取Clipboard服务：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Gets a handle to the clipboard service.</span></div><div class="line">ClipboardManager clipboardmanager = (ClipboardManager)       </div><div class="line">getSystemService(Context.CLIPBOARD_SERVICE);</div></pre></td></tr></table></figure>
-<h2 id="复制："><a href="#复制：" class="headerlink" title="###复制："></a>###复制：</h2><p>复制text:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Creates a new text clip to put on the </span></div><div class="line">clipboardClipData clip = ClipData.newPlainText(<span class="string">"simple text"</span>,<span class="string">"Hello, World!"</span>);</div><div class="line">clipboardmanager.setPrimaryClip(clip);</div></pre></td></tr></table></figure></p>
-<p>复制URL:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Creates a Uri based on a base Uri and a record ID based on the contact's last name</span></div><div class="line"><span class="comment">// Declares the base URI string</span></div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String CONTACTS = <span class="string">"content://com.example.contacts"</span>;</div><div class="line"><span class="comment">// Declares a path string for URIs that you use to copy data</span></div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String COPY_PATH = <span class="string">"/copy"</span>;<span class="comment">// Declares the Uri to paste to the clipboard</span></div><div class="line">Uri copyUri = Uri.parse(CONTACTS + COPY_PATH + <span class="string">"/"</span> + lastName);</div><div class="line">...</div><div class="line"><span class="comment">// Creates a new URI clip object. The system uses the anonymous getContentResolver() object to</span></div><div class="line"><span class="comment">// get MIME types from provider. The clip object's label is "URI", and its data is</span></div><div class="line"><span class="comment">// the Uri previously created.</span></div><div class="line">ClipData clip = ClipData.newUri(getContentResolver(),<span class="string">"URI"</span>,copyUri);</div><div class="line">clipboardmanager.setPrimaryClip(clip);</div></pre></td></tr></table></figure></p>
-<p>复制Intent:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Creates the IntentIntent appIntent = new Intent(this, com.example.demo.myapplication.class);</span></div><div class="line">...</div><div class="line"><span class="comment">// Creates a clip object with the Intent in it. Its label is "Intent" and its data is</span></div><div class="line"><span class="comment">// the Intent object created previously</span></div><div class="line">  ClipData clip = ClipData.newIntent(<span class="string">"Intent"</span>,appIntent);</div><div class="line">clipboardmanager.setPrimaryClip(clip);</div></pre></td></tr></table></figure></p>
-<h2 id="粘贴"><a href="#粘贴" class="headerlink" title="###粘贴:"></a>###粘贴:</h2><p>获取的方式都差不多<br>获取:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ClipData clipData = mClipboardManager.getPrimaryClip();</div><div class="line">ClipData.Item item = clipData.getItemAt(<span class="number">0</span>);</div><div class="line"><span class="comment">//获取text</span></div><div class="line">String text = item.getText().toString();</div><div class="line"><span class="comment">//获取uri</span></div><div class="line">Uri pasteUri = item.getUri();</div><div class="line"><span class="comment">//获取intent:</span></div><div class="line">Intent intent = item.getIntent();</div></pre></td></tr></table></figure></p>
-<p>google还为我们提供了剪切板发生改变的PrimaryClipChangedListener这样当我们获取到剪切板的数据后就可以做各种事情比如获取到用户复制了英文单词则可以帮助翻译,复制了链接则帮助打开等等。<br>监听剪切板变化的代码如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">mClipboardManager.addPrimaryClipChangedListener(<span class="keyword">new</span> ClipboardManager.OnPrimaryClipChangedListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPrimaryClipChanged</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="keyword">if</span> (clipboardManager.hasPrimaryClip())&#123;    </div><div class="line">          Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"剪切板发生改变"</span> ,Toast.LENGTH_SHORT).show();    </div><div class="line">    ClipData clipData = clipboardManager.getPrimaryClip();    </div><div class="line">      ClipData.Item item = clipData.getItemAt(<span class="number">0</span>);   </div><div class="line">         String text = item.getText().toString();    </div><div class="line">        Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"获取到的剪切板文字为:"</span>+text,       Toast.LENGTH_SHORT).show();&#125;</div><div class="line">      <span class="keyword">else</span> &#123;    </div><div class="line">        Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"剪切板上没有数据"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">          &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>使用mvp+rxjava+retrofit:<br>retrofit对Rxjava的支持是非常好的，可以直接返回可观察者,像这样:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@GET</span>(<span class="string">"query"</span>)</div><div class="line"><span class="function">Observable&lt;WeatherModel&gt; <span class="title">getWeatherByAddress</span><span class="params">(@Query(<span class="string">"key"</span>)</span> String key,@<span class="title">Query</span><span class="params">(<span class="string">"province"</span>)</span> String province, @<span class="title">Query</span><span class="params">(<span class="string">"city"</span>)</span> String city)</span>;</div></pre></td></tr></table></figure></p>
+<p>我们拿到可观察者后,就可以订阅事件了:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mCompositeSubscription.add(observable.subscribeOn(Schedulers.io())    </div><div class="line">.observeOn(AndroidSchedulers.mainThread())      </div><div class="line">  .subscribe(subscriber));</div></pre></td></tr></table></figure></p>
+<p>rxjava最nb的地方就是它可以很方便的切换线程不需要使用各种runOnUiThread<br>完整代码可以看<a href="https://github.com/fuyifang/RxWeather" target="_blank" rel="external">这个</a>;</p>
 
       
     </div>
@@ -324,13 +320,13 @@ Android provides a powerful clipboard-based framework for copying and pasting. I
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2017/01/08/安卓全局的复制粘贴-Clipboard/">安卓全局的复制粘贴--Clipboard</a></p>
+        <p><span>Title:</span><a href="/2017/01/08/使用mvp-rxjava-retrofit加载数据/">使用mvp+rxjava+retrofit加载数据</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">FyfBlog</a></p>
-        <p><span>Created:</span>2017-01-08, 11:16:45</p>
-        <p><span>Updated:</span>2017-01-08, 11:17:44</p>
+        <p><span>Created:</span>2017-01-08, 11:22:30</p>
+        <p><span>Updated:</span>2017-01-08, 11:23:33</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2017/01/08/安卓全局的复制粘贴-Clipboard/" title="安卓全局的复制粘贴--Clipboard">http://yoursite.com/2017/01/08/安卓全局的复制粘贴-Clipboard/</a>
-            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2017/01/08/安卓全局的复制粘贴-Clipboard/　　By FyfBlog" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2017/01/08/使用mvp-rxjava-retrofit加载数据/" title="使用mvp+rxjava+retrofit加载数据">http://yoursite.com/2017/01/08/使用mvp-rxjava-retrofit加载数据/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2017/01/08/使用mvp-rxjava-retrofit加载数据/　　By FyfBlog" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -342,16 +338,10 @@ Android provides a powerful clipboard-based framework for copying and pasting. I
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/01/08/使用mvp-rxjava-retrofit加载数据/">
-                    使用mvp+rxjava+retrofit加载数据
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/10/13/Viewpager无限循环-首页与尾页平滑过渡/">
-                    Viewpager无限循环(首页与尾页平滑过渡)
+                <a href="/2017/01/08/安卓全局的复制粘贴-Clipboard/">
+                    安卓全局的复制粘贴--Clipboard
                 </a>
             </div>
         
@@ -363,7 +353,7 @@ Android provides a powerful clipboard-based framework for copying and pasting. I
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安卓全局Clipboard"><span class="toc-number">1.</span> <span class="toc-text">#安卓全局Clipboard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HOW-TO-USE"><span class="toc-number">2.</span> <span class="toc-text">##HOW TO USE:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复制："><span class="toc-number">3.</span> <span class="toc-text">###复制：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#粘贴"><span class="toc-number">4.</span> <span class="toc-text">###粘贴:</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -399,7 +389,7 @@ Android provides a powerful clipboard-based framework for copying and pasting. I
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"安卓全局的复制粘贴--Clipboard　| 付易帆的个人博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"使用mvp+rxjava+retrofit加载数据　| 付易帆的个人博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -419,15 +409,13 @@ Android provides a powerful clipboard-based framework for copying and pasting. I
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/01/08/使用mvp-rxjava-retrofit加载数据/" title="Pre: 使用mvp+rxjava+retrofit加载数据">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/10/13/Viewpager无限循环-首页与尾页平滑过渡/" title="Next: Viewpager无限循环(首页与尾页平滑过渡)">
+            <a href="/2017/01/08/安卓全局的复制粘贴-Clipboard/" title="Next: 安卓全局的复制粘贴--Clipboard">
                 <i class="fa fa-angle-right"></i>
             </a>
         
