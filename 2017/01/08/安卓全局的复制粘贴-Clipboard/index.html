@@ -15,19 +15,22 @@
 
 
 
-<meta name="description" content="静默安装First blood 今天公司有个静默安装的需求，由于是自己的系统，所以操作起来比较容易，无需kengdie的root权限，在网上找了下资料，记录如下：
-具体实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354static  DataOut">
+<meta name="description" content="#安卓全局ClipboardClipboard官方文档在此(需要科学上网…)Clioboard 的官方解释是这样的:
+
+Android provides a powerful clipboard-based framework for copying and pasting. It supports both simple and complex data types, including tex">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android静默安装">
-<meta property="og:url" content="http://yoursite.com/2016/09/29/Android静默安装/index.html">
+<meta property="og:title" content="安卓全局的复制粘贴--Clipboard">
+<meta property="og:url" content="http://yoursite.com/2017/01/08/安卓全局的复制粘贴-Clipboard/index.html">
 <meta property="og:site_name" content="付易帆的个人博客">
-<meta property="og:description" content="静默安装First blood 今天公司有个静默安装的需求，由于是自己的系统，所以操作起来比较容易，无需kengdie的root权限，在网上找了下资料，记录如下：
-具体实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354static  DataOut">
-<meta property="og:updated_time" content="2016-09-29T15:41:49.000Z">
+<meta property="og:description" content="#安卓全局ClipboardClipboard官方文档在此(需要科学上网…)Clioboard 的官方解释是这样的:
+
+Android provides a powerful clipboard-based framework for copying and pasting. It supports both simple and complex data types, including tex">
+<meta property="og:updated_time" content="2017-01-08T03:17:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android静默安装">
-<meta name="twitter:description" content="静默安装First blood 今天公司有个静默安装的需求，由于是自己的系统，所以操作起来比较容易，无需kengdie的root权限，在网上找了下资料，记录如下：
-具体实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354static  DataOut">
+<meta name="twitter:title" content="安卓全局的复制粘贴--Clipboard">
+<meta name="twitter:description" content="#安卓全局ClipboardClipboard官方文档在此(需要科学上网…)Clioboard 的官方解释是这样的:
+
+Android provides a powerful clipboard-based framework for copying and pasting. It supports both simple and complex data types, including tex">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -59,7 +62,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Android静默安装 | 付易帆的个人博客</title>
+<title>安卓全局的复制粘贴--Clipboard | 付易帆的个人博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -263,11 +266,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-Android静默安装" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-安卓全局的复制粘贴-Clipboard" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/09/29/Android静默安装/" class="article-date">
-      <time datetime="2016-09-29T15:41:27.000Z" itemprop="datePublished">2016-09-29</time>
+      <a href="/2017/01/08/安卓全局的复制粘贴-Clipboard/" class="article-date">
+      <time datetime="2017-01-08T03:16:45.000Z" itemprop="datePublished">2017-01-08</time>
 </a>
 
 
@@ -282,7 +285,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Android静默安装
+      安卓全局的复制粘贴--Clipboard
     </h1>
   
 
@@ -299,10 +302,20 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="静默安装"><a href="#静默安装" class="headerlink" title="静默安装"></a>静默安装</h1><p><strong><em>First blood </em></strong><br>今天公司有个静默安装的需求，由于是自己的系统，所以操作起来比较容易，无需kengdie的root权限，在网上找了下资料，记录如下：</p>
-<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span>  DataOutputStream dataOutputStream = <span class="keyword">null</span>; </div><div class="line"><span class="keyword">static</span> BufferedReader errorStream = <span class="keyword">null</span>; </div><div class="line"><span class="keyword">static</span> Process process;</div><div class="line"><span class="keyword">static</span> <span class="keyword">boolean</span> result = <span class="keyword">false</span>;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  <span class="keyword">boolean</span> <span class="title">slientInstall</span><span class="params">(String apkPath)</span></span></div><div class="line">&#123;  </div><div class="line">  <span class="keyword">try</span> &#123;        </div><div class="line">process = Runtime.getRuntime().exec(<span class="string">"su"</span>); <span class="comment">//获取su权限</span></div><div class="line"> dataOutputStream = <span class="keyword">new</span> DataOutputStream(process.getOutputStream());<span class="comment">//获取</span></div><div class="line">      String command = <span class="string">"pm install -r "</span>+apkPath+<span class="string">"\n"</span>; <span class="comment">//安装命令</span></div><div class="line"> String path = apkPath;       </div><div class="line"> Log.e(<span class="string">"Tag"</span>,command);       </div><div class="line"> Log.e(<span class="string">"Tag"</span>,path+<span class="string">"+++&gt;path"</span>);       </div><div class="line">     dataOutputStream.write(command.getBytes(Charset.forName(<span class="string">"utf-8"</span>)));        </div><div class="line">     dataOutputStream.flush();     </div><div class="line">     dataOutputStream.writeBytes(<span class="string">"exit\n"</span>);       </div><div class="line">     dataOutputStream.flush();       </div><div class="line">   <span class="keyword">try</span> &#123;            </div><div class="line">  process.waitFor();           </div><div class="line">   errorStream = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(process.getErrorStream())); <span class="comment">//记录安装的信息      </span></div><div class="line"> String msg = <span class="string">""</span>;</div><div class="line">  String line;           </div><div class="line"> <span class="keyword">while</span> ((line = errorStream.readLine())!= <span class="keyword">null</span>)</div><div class="line">&#123;               </div><div class="line"> msg+=line;          </div><div class="line">  &#125;          </div><div class="line">  Log.e(<span class="string">"Tag"</span>,<span class="string">"安装的信息是"</span>+msg);   </div><div class="line">         <span class="keyword">if</span> (!msg.contains(<span class="string">"Failure"</span>))</div><div class="line">                    &#123;</div><div class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;           </div><div class="line">                     &#125;       </div><div class="line">                                              &#125; </div><div class="line"><span class="keyword">catch</span> (InterruptedException e)</div><div class="line"> &#123;           </div><div class="line"> e.printStackTrace();       </div><div class="line"> &#125;   </div><div class="line"> &#125;</div><div class="line"> <span class="keyword">catch</span> (IOException e) </div><div class="line">&#123;        </div><div class="line">e.printStackTrace(); </div><div class="line">   &#125;<span class="keyword">finally</span> &#123;  </div><div class="line">          <span class="keyword">try</span> &#123;             </div><div class="line">   <span class="keyword">if</span> (dataOutputStream!=<span class="keyword">null</span>)&#123;    </div><div class="line">            dataOutputStream.close();   </div><div class="line">             &#125;             </div><div class="line">   <span class="keyword">if</span> (errorStream!= <span class="keyword">null</span>)&#123;      </div><div class="line">              errorStream.close();      </div><div class="line">          &#125;        </div><div class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;  </div><div class="line">              e.printStackTrace();  </div><div class="line">          &#125;   </div><div class="line"> &#125;    </div><div class="line"><span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面就实现了静默安装的功能，需要应用有root 权限才行,第一次写博客代码有点乱,,zzzzz<br>待续。。</p>
-<p>###作者<br><a href="fuyifang.github.io">fuyifang</a></p>
+        <h2 id="安卓全局Clipboard"><a href="#安卓全局Clipboard" class="headerlink" title="#安卓全局Clipboard"></a>#安卓全局Clipboard</h2><p>Clipboard官方文档<a href="https://developer.android.com/guide/topics/text/copy-paste.html" target="_blank" rel="external">在此</a>(需要科学上网…)<br>Clioboard 的官方解释是这样的:</p>
+<hr>
+<p><em>Android provides a powerful clipboard-based framework for copying and pasting. It supports both simple and complex data types, including text strings, complex data structures, text and binary stream data, and even application assets</em></p>
+<hr>
+<p>大概意思就是:<br>Android提供了一个强大的复制和粘贴clipboard-based框架。它同时支持的简单和复杂数据类型,包括文本字符串,复杂的数据结构,文本和二进制数据流,甚至应用程序资源.<br>Clipboard支持三种形式的数据传递:<strong>text</strong>,<strong>URL</strong>,<strong>Intent</strong>.</p>
+<p>某宝的口令应该就是之类的方式来实现的。</p>
+<h2 id="HOW-TO-USE"><a href="#HOW-TO-USE" class="headerlink" title="##HOW TO USE:"></a>##HOW TO USE:</h2><p>直接上官方的示例代码</p>
+<p>###获取Clipboard服务：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Gets a handle to the clipboard service.</span></div><div class="line">ClipboardManager clipboardmanager = (ClipboardManager)       </div><div class="line">getSystemService(Context.CLIPBOARD_SERVICE);</div></pre></td></tr></table></figure>
+<h2 id="复制："><a href="#复制：" class="headerlink" title="###复制："></a>###复制：</h2><p>复制text:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Creates a new text clip to put on the </span></div><div class="line">clipboardClipData clip = ClipData.newPlainText(<span class="string">"simple text"</span>,<span class="string">"Hello, World!"</span>);</div><div class="line">clipboardmanager.setPrimaryClip(clip);</div></pre></td></tr></table></figure></p>
+<p>复制URL:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Creates a Uri based on a base Uri and a record ID based on the contact's last name</span></div><div class="line"><span class="comment">// Declares the base URI string</span></div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String CONTACTS = <span class="string">"content://com.example.contacts"</span>;</div><div class="line"><span class="comment">// Declares a path string for URIs that you use to copy data</span></div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String COPY_PATH = <span class="string">"/copy"</span>;<span class="comment">// Declares the Uri to paste to the clipboard</span></div><div class="line">Uri copyUri = Uri.parse(CONTACTS + COPY_PATH + <span class="string">"/"</span> + lastName);</div><div class="line">...</div><div class="line"><span class="comment">// Creates a new URI clip object. The system uses the anonymous getContentResolver() object to</span></div><div class="line"><span class="comment">// get MIME types from provider. The clip object's label is "URI", and its data is</span></div><div class="line"><span class="comment">// the Uri previously created.</span></div><div class="line">ClipData clip = ClipData.newUri(getContentResolver(),<span class="string">"URI"</span>,copyUri);</div><div class="line">clipboardmanager.setPrimaryClip(clip);</div></pre></td></tr></table></figure></p>
+<p>复制Intent:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Creates the IntentIntent appIntent = new Intent(this, com.example.demo.myapplication.class);</span></div><div class="line">...</div><div class="line"><span class="comment">// Creates a clip object with the Intent in it. Its label is "Intent" and its data is</span></div><div class="line"><span class="comment">// the Intent object created previously</span></div><div class="line">  ClipData clip = ClipData.newIntent(<span class="string">"Intent"</span>,appIntent);</div><div class="line">clipboardmanager.setPrimaryClip(clip);</div></pre></td></tr></table></figure></p>
+<h2 id="粘贴"><a href="#粘贴" class="headerlink" title="###粘贴:"></a>###粘贴:</h2><p>获取的方式都差不多<br>获取:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ClipData clipData = mClipboardManager.getPrimaryClip();</div><div class="line">ClipData.Item item = clipData.getItemAt(<span class="number">0</span>);</div><div class="line"><span class="comment">//获取text</span></div><div class="line">String text = item.getText().toString();</div><div class="line"><span class="comment">//获取uri</span></div><div class="line">Uri pasteUri = item.getUri();</div><div class="line"><span class="comment">//获取intent:</span></div><div class="line">Intent intent = item.getIntent();</div></pre></td></tr></table></figure></p>
+<p>google还为我们提供了剪切板发生改变的PrimaryClipChangedListener这样当我们获取到剪切板的数据后就可以做各种事情比如获取到用户复制了英文单词则可以帮助翻译,复制了链接则帮助打开等等。<br>监听剪切板变化的代码如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">mClipboardManager.addPrimaryClipChangedListener(<span class="keyword">new</span> ClipboardManager.OnPrimaryClipChangedListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPrimaryClipChanged</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="keyword">if</span> (clipboardManager.hasPrimaryClip())&#123;    </div><div class="line">          Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"剪切板发生改变"</span> ,Toast.LENGTH_SHORT).show();    </div><div class="line">    ClipData clipData = clipboardManager.getPrimaryClip();    </div><div class="line">      ClipData.Item item = clipData.getItemAt(<span class="number">0</span>);   </div><div class="line">         String text = item.getText().toString();    </div><div class="line">        Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"获取到的剪切板文字为:"</span>+text,       Toast.LENGTH_SHORT).show();&#125;</div><div class="line">      <span class="keyword">else</span> &#123;    </div><div class="line">        Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"剪切板上没有数据"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">          &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -311,13 +324,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2016/09/29/Android静默安装/">Android静默安装</a></p>
+        <p><span>Title:</span><a href="/2017/01/08/安卓全局的复制粘贴-Clipboard/">安卓全局的复制粘贴--Clipboard</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">FyfBlog</a></p>
-        <p><span>Created:</span>2016-09-29, 23:41:27</p>
-        <p><span>Updated:</span>2016-09-29, 23:41:49</p>
+        <p><span>Created:</span>2017-01-08, 11:16:45</p>
+        <p><span>Updated:</span>2017-01-08, 11:17:44</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2016/09/29/Android静默安装/" title="Android静默安装">http://yoursite.com/2016/09/29/Android静默安装/</a>
-            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2016/09/29/Android静默安装/　　By FyfBlog" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2017/01/08/安卓全局的复制粘贴-Clipboard/" title="安卓全局的复制粘贴--Clipboard">http://yoursite.com/2017/01/08/安卓全局的复制粘贴-Clipboard/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2017/01/08/安卓全局的复制粘贴-Clipboard/　　By FyfBlog" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -329,12 +342,12 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
+        
+            <div id="article-nav-older" class="article-nav-title">
                 <a href="/2016/10/13/Viewpager无限循环-首页与尾页平滑过渡/">
                     Viewpager无限循环(首页与尾页平滑过渡)
                 </a>
             </div>
-        
         
     </nav>
 
@@ -344,7 +357,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#静默安装"><span class="toc-number">1.</span> <span class="toc-text">静默安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#具体实现"><span class="toc-number">1.1.</span> <span class="toc-text">具体实现</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安卓全局Clipboard"><span class="toc-number">1.</span> <span class="toc-text">#安卓全局Clipboard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HOW-TO-USE"><span class="toc-number">2.</span> <span class="toc-text">##HOW TO USE:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复制："><span class="toc-number">3.</span> <span class="toc-text">###复制：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#粘贴"><span class="toc-number">4.</span> <span class="toc-text">###粘贴:</span></a></li></ol>
         
     </div>
     <style>
@@ -380,7 +393,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Android静默安装　| 付易帆的个人博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"安卓全局的复制粘贴--Clipboard　| 付易帆的个人博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -400,15 +413,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/10/13/Viewpager无限循环-首页与尾页平滑过渡/" title="Pre: Viewpager无限循环(首页与尾页平滑过渡)">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+            <a href="/2016/10/13/Viewpager无限循环-首页与尾页平滑过渡/" title="Next: Viewpager无限循环(首页与尾页平滑过渡)">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
