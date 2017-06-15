@@ -254,6 +254,94 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-JAVA-泛型理解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/15/JAVA-泛型理解/" class="article-date">
+      <time datetime="2017-06-15T02:21:40.000Z" itemprop="datePublished">2017-06-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/15/JAVA-泛型理解/">JAVA-泛型理解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><em>一直对java泛型一知半解，决定好好理解一下泛型</em>.</p>
+<hr>
+<p>##泛型的基本使用:<br>我们最常用到泛型的地方可能是arraylist中，如：<code>ArrayList&lt;Integer&gt; intList = new ArrayList&lt;Integer&gt;();</code>它可以构造各种类型的变量来组装成不同的list而不必对每一个类型都创建一个Arraylist的类,</p>
+<ul>
+<li>定义及使用:<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>&lt;<span class="title">T</span>&gt;</span>&#123;<span class="comment">// 此处可以随便写标识符号   </span></div><div class="line">    <span class="keyword">private</span> T x ;        </div><div class="line">    <span class="keyword">private</span> T y ;        </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(T x)</span></span>&#123;<span class="comment">//作为参数  </span></div><div class="line">        <span class="keyword">this</span>.x = x ;  </div><div class="line">    &#125;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(T y)</span></span>&#123;  </div><div class="line">        <span class="keyword">this</span>.y = y ;  </div><div class="line">    &#125;  </div><div class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getAge</span><span class="params">()</span></span>&#123;<span class="comment">//作为返回值  </span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.x ;  </div><div class="line">    &#125;  </div><div class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getName</span><span class="params">()</span></span>&#123;  </div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.y ;  </div><div class="line">    &#125;  </div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>因为T表示派生自Object类的任何类，所以尖括号T中必须是继承自Object,如:String,Interger,不能使用原始的类型,如int,double.<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用</span></div><div class="line"><span class="comment">//设置年龄 </span></div><div class="line">Person&lt;Integer&gt; p = <span class="keyword">new</span> Person&lt;Integer&gt;() ;   </div><div class="line">p.setAge(<span class="keyword">new</span> Integer(<span class="number">100</span>)) ;   </div><div class="line">System.out.println(p.getAge());</div></pre></td></tr></table></figure></p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//设置名字  </span></div><div class="line">Person&lt;String&gt; p = <span class="keyword">new</span> Person&lt;String&gt;() ;   </div><div class="line">p.setName(<span class="keyword">new</span> String(<span class="string">"name"</span>)) ;   </div><div class="line">System.out.println(p.getName());</div></pre></td></tr></table></figure>
+<p>###使用的Class<t> object来传递类的class对象<br>我们在解析Json的时候:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;SuccessModel&gt; <span class="title">parseSuccessArray</span><span class="params">(String response)</span></span>&#123;  </div><div class="line">    List&lt;SuccessModel&gt; modelList = JSON.parseArray(response, SuccessModel.class);  </div><div class="line">    <span class="keyword">return</span> modelList;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></t></p>
+<p>这样做比较的死板，我们可以吧successmodel抽取出来，当做一个变量，这样就可以使用到泛型了，如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">List&lt;T&gt; <span class="title">parseArray</span><span class="params">(String response,Class&lt;T&gt; object)</span></span>&#123;  </div><div class="line">    List&lt;T&gt; modelList = JSON.parseArray(response, object);  </div><div class="line">    <span class="keyword">return</span> modelList;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>注意到，我们用的Class<t> object来传递类的class对象，即我们上面提到的SuccessModel.class，这样就可以传递任意的class来解析不同的数据.</t></p>
+<p>//待续。。。。</p>
+<p>##进阶</p>
+<p>###类型绑定:<br>有时候定义泛型的时候可能希望泛型类型只能是一部分类型,就是给泛型指定一个界限，<br>定义形式为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;T extends BoundingType&gt;</div></pre></td></tr></table></figure></p>
+<p>T和BoundingType可以是类，也可以是接口。另外注意的是，此处的”extends“表示的子类型，<strong>不等同于继承</strong>。在这里extends后的BoundingType可以是类，也可以是接口.</p>
+<p>###通配符:<br>通配符用?表示无边界通配符，通配符的意义就是他是一个未知的符号，可以表示任意的类，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Point&lt;?&gt; point;  </div><div class="line">point = new Point&lt;Integer&gt;(3,3);  </div><div class="line">point = new Point&lt;Float&gt;(4.3f,4.3f);  </div><div class="line">point = new Point&lt;Double&gt;(4.3d,4.90d);  </div><div class="line">point = new Point&lt;Long&gt;(12l,23l);</div></pre></td></tr></table></figure></p>
+<ul>
+<li>通配符?和T的区别:<br>泛型变量T不能在代码用于创建变量，只能在类，接口，函数中声明以后，才能使用。<br>而无边界通配符？则<strong>只能用于填充泛型变量T，表示通配任何类型</strong><br>如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Box&lt;?&gt; box;  </div><div class="line">box = new Box&lt;String&gt;();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>？只能出现在Box&lt;?&gt; box;中，其它位置都是不对的</p>
+<ul>
+<li>通配符?的extends绑定:<br>通配符可以和泛型一样加以限定。如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Point&lt;? extends Number&gt; point;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>注意：<strong>利用&lt;? extends Number&gt;定义的变量，只可取其中的值，不可修改</strong><br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Point&lt;? extends Number&gt; point = new Point&lt;Integer&gt;(3);</div></pre></td></tr></table></figure></p>
+<p>point的类型是由Point&lt;? extends Number&gt;决定的,并不会因为point = new Point<integer>(3);而改变类型。如果会改变类型那么&lt;? extends Number&gt;就失去了作用。但取值时，正由于泛型变量T被填充为&lt;? extends Number&gt;，所以编译器能确定的是T肯定是Number的子类，编译器就会用Number来填充T。</integer></p>
+<p>###通配符？的super绑定:<br>如果说 &lt;? extends XXX&gt;指填充为派生于XXX的任意子类的话，那么&lt;? super XXX&gt;则表示填充为任意XXX的父类.<br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">class CEO extends Manager &#123;  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line">class Manager extends Employee &#123;  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line">class Employee &#123;  </div><div class="line">&#125;  </div><div class="line"></div><div class="line">List&lt;? super Manager&gt; list;  </div><div class="line">list = new ArrayList&lt;Employee &gt;();</div><div class="line">list = new ArrayList&lt;Manager &gt;();</div><div class="line">list = new ArrayList&lt;CEO &gt;();//编译会报错</div></pre></td></tr></table></figure></p>
+<p>因为CEO类已经不再是Manager的父类了。所以会报编译错误。<br>注意：<strong>super通配符表示的实例内容：能存不能取</strong><br>先看存的部分:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">List&lt;? super Manager&gt; list;  </div><div class="line">list = new ArrayList&lt;Employee&gt;();  </div><div class="line">//存  </div><div class="line">list.add(new Employee()); //编译错误  </div><div class="line">list.add(new Manager());  </div><div class="line">list.add(new CEO());</div></pre></td></tr></table></figure></p>
+<p>为什么会报编译错误呢?因为<br>编译器无法确定&lt;? super Manager&gt;的具体类型，但唯一可以确定的是Manager()、CEO()肯定是&lt;? super Manager&gt;的子类，所以肯定是可以add进去的。但Employee不一定是&lt;? super Manager&gt;的子类，所以不能确定，不能确定的，肯定是不允许的，所以会报编译错误。<br>super和extends相反，使用super关键字时，往里存的只要是Employee的子类,就会强制转换为Employee存储,但是取出来时应该都为父类Employee所以没有意义，所以我们认为super通配符：能存不能取；</p>
+<p>##总结<br> extends 和 the ? super 通配符的特征，我们可以得出以下结论：<br>◆ 如果你想从一个数据类型里获取数据，使用 ? extends 通配符（能取不能存）<br>◆ 如果你想把对象写入一个<a href="http://lib.csdn.net/base/datastructure" target="_blank" rel="external">数据结构</a>里，使用 ? super 通配符（能存不能取）<br>◆ 如果你既想存，又想取，那就别用通配符。</p>
+<p>参考链接：<br> <a href="http://blog.csdn.net/harvic880925/article/details/49872903" target="_blank" rel="external">夯实JAVA基本之一 —— 泛型详解(1):基本使用</a><br><a href="http://blog.csdn.net/harvic880925/article/details/49883589" target="_blank" rel="external">夯实JAVA基本之一——泛型详解(2)：高级进阶</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-使用mvp-rxjava-retrofit加载数据" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
